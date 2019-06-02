@@ -1,0 +1,53 @@
+img {
+    width: 50px;
+    height: 50px;
+    align-content: center;
+  }
+  
+  body {
+    text-align: center;
+    background-color: orange;
+    line-height: 100%;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 30%;
+    margin-right: 25%;
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    flex: 1;
+  }
+  
+  .not-devoured {
+    padding: 10px;
+  }
+  
+  .devoured {
+    padding: 10px;
+  }
+  
+  .form-group {
+    padding: 15px;
+    position: relative;
+  }
+  
+  .not-devoured-two {
+    background-color: white;
+    width: 175px;
+    height: 50px;
+    padding: 5px;
+  }
+  
+  .devoured-two {
+    background-color: grey;
+    width: 150px;
+    height: 50px;
+    padding: 5px;
+  }
