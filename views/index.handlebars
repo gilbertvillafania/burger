@@ -1,42 +1,40 @@
 <h1>Eat-Da-Burger!</h1>
-
-<main>
-  <div class="container">
-    <div class="burger-before">
-      <div class="col s6">
-
-        {{#each burgers}}
-          {{#unless this.devoured}}
-            <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-              </form>
-            </div>
-          {{/unless}}
-        {{/each}}
-      </div>
-
-      <div class="burger-after">
-        {{#each burgers}}
-          {{#if this.devoured}}
-            <div class='burgerEaten'>
-              <div>
-                {{this.burger_name}}
-              </div>
-            </div>
-          {{/if}}
-        {{/each}}
-      </div>
+<div class="row">
+  <div class="column">
+    <div class="uneaten">
+      {{#each burgers}}
+      {{#unless devoured}}
+      <ul>
+        <div class="uneaten-two">
+            {{id}} . 
+            {{burger_name}}
+            <button class="change-burger" data-id="{{id}}" data-newburger="{{devoured}}">
+              Devour!
+            </button>
+        </div>
+      </ul>
+      {{/unless}}
+      {{/each}}
     </div>
   </div>
-</main>
-
-<div class="submit-row">
-  <div class="col s12">
-    <form action="/burgers" method="POST">
-      <input type="text" id="name" name="burger_name" placeholder="">
-      <button type="submit" class="addBurgerButton">Submit</button>
-    </form>
-    <h5>"Enter a burger you want to eat and click the submit button"<h5>
+  <div class="column">
+    <div class="devoured">
+      {{#each burgers}}
+      {{#if devoured}}
+      <ul>
+        <div class="devoured-two">
+        {{id}} . {{burger_name}}
+        </div>
+      </ul>
+      {{/if}}
+      {{/each}}
+    </div>
   </div>
 </div>
+<form class="create-form-group">
+  <div class="form">
+    <textarea id="burgers" name="burger" rows="6" cols="30"></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+<p>Enter a burger you want to eat and hit the submit button</p>
